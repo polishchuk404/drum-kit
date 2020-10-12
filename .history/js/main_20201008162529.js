@@ -1,0 +1,26 @@
+
+  window.addEventListener('keyup', (e) => {
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    const sound = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    if (!sound) return;
+    sound.currentTime = 0;
+    sound.play();
+    key.classList.toggle('playing');
+  });
+  window.addEventListener('keydown', (e) => {
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    key.classList.toggle('playing')
+  }); 
+
+  window.addEventListener('mouseup', (e) => {
+    const dataKey = document.querySelector(`.key`);
+    // dataKey.this.getAttribute('data-key');
+    // const sound = document.querySelector(`audio[data-key="${keyAt}"]`);
+    console.log(dataKey.elem.getAttribute('data-key'));
+
+    // if (!sound) return;
+    // sound.currentTime = 0;
+    // sound.play();
+    // key.classList.toggle('playing');
+  });
+  
